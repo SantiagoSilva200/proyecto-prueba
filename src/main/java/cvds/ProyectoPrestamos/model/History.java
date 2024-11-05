@@ -17,14 +17,20 @@ public class History {
     @Column(nullable = false)
     private LoanState state;
     @Column(nullable = false)
-    private String idUser;
+    private String studientName;
 
-    public History(String bookCode, LocalDate loanDate, LocalDate returnDate, LoanState state, String idUser) {
+    public History(String bookCode, LocalDate loanDate, LocalDate returnDate, LoanState state, String studientName) {
         this.bookCode = bookCode;
         this.loanDate = loanDate;
         this.returnDate = returnDate;
         this.state = state;
-        this.idUser = idUser;
+        this.studientName = studientName;
+    }
+
+    public History(String bookCode,LoanState state, String studientName) {
+        this.bookCode = bookCode;
+        this.state = state;
+        this.studientName = studientName;
     }
 
     public void setBookCode(String bookCode) {
@@ -43,9 +49,6 @@ public class History {
         this.state = state;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
 
     public String getBookCode() {
         return bookCode;
@@ -63,7 +66,11 @@ public class History {
         return state;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public String getStudientName() {
+        return studientName;
+    }
+
+    public void setStudientName(String studientName) {
+        this.studientName = studientName;
     }
 }
