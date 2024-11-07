@@ -28,6 +28,10 @@ public class StudentException extends RuntimeException {
                 this.userMessage = "El estudiante no es válido para este préstamo.";
                 this.developerMessage = "Intento de préstamo fallido. Estudiante no válido.";
                 break;
+            case BOOK_ALREADY_ISSUED:
+                this.userMessage = "El estudiante ya tiene este libro.";
+                this.developerMessage = "Intento de préstamo fallido. El estudiante ya posee este libro.";
+                break;
             default:
                 this.userMessage = "Hubo un error inesperado con la información del estudiante.";
                 this.developerMessage = "Error desconocido relacionado con el estudiante.";
@@ -49,6 +53,7 @@ public class StudentException extends RuntimeException {
 
     public enum ErrorType {
         STUDENT_NOT_FOUND,
-        INVALID_STUDENT
+        INVALID_STUDENT,
+        BOOK_ALREADY_ISSUED
     }
 }

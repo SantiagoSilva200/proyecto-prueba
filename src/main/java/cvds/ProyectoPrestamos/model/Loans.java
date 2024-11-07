@@ -4,7 +4,6 @@ package cvds.ProyectoPrestamos.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 import java.time.LocalDate;
@@ -32,7 +31,7 @@ public class Loans {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Loans(String studientId,String studientName,LocalDate returnDate, LoanState loanState,String bookCode,) {
+    public Loans(String studientId,String studientName,LocalDate returnDate, LoanState loanState,String bookCode) {
         this.returnDate = returnDate;
         this.loanState = loanState;
         this.loandDate = LocalDate.now();

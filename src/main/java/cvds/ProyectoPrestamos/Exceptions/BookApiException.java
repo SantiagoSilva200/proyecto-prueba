@@ -28,6 +28,10 @@ public class BookApiException extends RuntimeException {
                 this.userMessage = "No se encontraron datos para el libro solicitado.";
                 this.developerMessage = "Datos no encontrados para el libro en la API.";
                 break;
+            case UPDATE_FAILED:
+                this.userMessage = "No pudimos actualizar el estado del libro. Por favor, inténtelo más tarde.";
+                this.developerMessage = "Error al actualizar el estado del libro en la API.";
+                break;
             case UNKNOWN_ERROR:
             default:
                 this.userMessage = "Hubo un error inesperado. Por favor, intente nuevamente.";
@@ -51,6 +55,7 @@ public class BookApiException extends RuntimeException {
     public enum ErrorType {
         API_ERROR,
         DATA_NOT_FOUND,
+        UPDATE_FAILED,
         UNKNOWN_ERROR
     }
 }

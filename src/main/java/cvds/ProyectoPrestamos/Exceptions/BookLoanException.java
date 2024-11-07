@@ -32,6 +32,10 @@ public class BookLoanException extends RuntimeException {
                 this.userMessage = "El código del libro no es válido.";
                 this.developerMessage = "Intento de préstamo fallido. Código de libro inválido.";
                 break;
+            case NO_LOAN_FOUND:
+                this.userMessage = "El libro no tiene un préstamo activo registrado.";
+                this.developerMessage = "Intento de devolución fallido. El libro no está registrado como prestado.";
+                break;
             default:
                 this.userMessage = "Hubo un error inesperado con el préstamo.";
                 this.developerMessage = "Error desconocido al intentar procesar el préstamo.";
@@ -54,6 +58,7 @@ public class BookLoanException extends RuntimeException {
     public enum ErrorType {
         ALREADY_BORROWED,
         NOT_AVAILABLE,
-        INVALID_BOOK
+        INVALID_BOOK,
+        NO_LOAN_FOUND
     }
 }
